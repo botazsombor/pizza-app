@@ -1,6 +1,6 @@
-<form (submit)="submit(issueForm)" #issueForm="ngForm">
+<form (submit)="submit(userForm)" #userForm="ngForm">
   <div class="form-group">
-    <!-- <small id="locationHelp" class="form-text text-muted">Give the location of the issue (e.g. labor)</small> -->
+    <!-- <small id="locationHelp" class="form-text text-muted">Give the location of the user (e.g. labor)</small> -->
     <mat-form-field>
       <input matInput
         type="text"
@@ -17,7 +17,7 @@
   </div>
 
   <div class="form-group">
-    <!-- <small id="locationHelp" class="form-text text-muted">Give the location of the issue (e.g. labor)</small> -->
+    <!-- <small id="locationHelp" class="form-text text-muted">Give the location of the user (e.g. labor)</small> -->
     <mat-form-field>
       <input matInput
         type="text"
@@ -44,15 +44,15 @@
           name="description"
           [(ngModel)]="model.description"
           aria-describedby="descriptionHelp"
-          placeholder="Enter issue details">
+          placeholder="Enter user details">
         </textarea>
       </mat-form-field>
     </div>
     
     <button mat-raised-button
-      [disabled]="!issueForm.valid" 
+      [disabled]="!userForm.valid" 
       type="submit"
       color="primary">
-      Save issue
+      Save user
     </button>
   </form>

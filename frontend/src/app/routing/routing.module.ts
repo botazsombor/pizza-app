@@ -1,27 +1,27 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { IssueListComponent } from "../issue-list/issue-list.component";
-import { IssueFormComponent } from '../issue-form/issue-form.component';
-import { IssueDetailComponent } from '../issue-detail/issue-detail.component';
+import { UserListComponent } from "../user-list/user-list.component";
+import { UserFormComponent } from '../user-form/user-form.component';
+import { UserDetailComponent } from '../user-detail/user-detail.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/issues',
+    redirectTo: '/users',
     pathMatch: 'full'
   },
   {
-    path: 'issues',
-    component: IssueListComponent
+    path: 'users',
+    component: UserListComponent
   },
   {
-    path: 'issues/add',
-    component: IssueFormComponent
+    path: 'users/add',
+    component: UserFormComponent
   },
   {
-    path: 'issues/:id',
-    component: IssueDetailComponent
+    path: 'users/:id',
+    component: UserDetailComponent
   },
 ];
 

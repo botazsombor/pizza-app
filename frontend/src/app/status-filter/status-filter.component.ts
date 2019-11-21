@@ -8,7 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class StatusFilterComponent  {
 
   @Input('status') selectedStatus: string = '';
-  public statuses: string[] = [ 'NEW', 'INPROGRESS', 'RESOLVED', 'CLOSED' ];
+  public statuses: string[] = [ 'ROLE_USER', 'ROLE_ADMIN' ];
   @Output() onChange = new EventEmitter<string>();
 
   constructor() { }
