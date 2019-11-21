@@ -10,17 +10,16 @@ Felhasználó: termékek szűrése, kosárba tétel, rendelés
 
 
 ## Funkcionális követelmények
-  * Bejelentkezés/Kijelentkezés személyes adatokkal
-  * Pizzarendelés (esetleg mást is)
-  * Kosár fünkció (több pizzát egyszerre)
+  * Felhasználóként szeretnék tudni bejelentkezni az oldalra.
+  * Felhasználóként szeretném tudni egy vagy több pizzát rendelni.
+  * Tulajdonosként szeretnék új pizzákat létrehozni.
+  * Tulajdonosként szeretnék új összetevőket létrehozni.
+  * Tulajdonosként szeretném a pizzákat módosítani vagy törölni.
   
 ## Nem funkcionális követelmények
-  * User adatbázis
-  * Feltét + alap adatbázis
-  * A fentebbi kettőből összerakott lista az előre összerakott pizzákkal
-  * Akciós pizzák
-  * A kosár adatai ne vesszenek el kijelentkezésig
-  * Esetleg kuponok felvitele
+  * Felhasználóbarát, ergonomikus elrendezés és kinézet.
+  * Gyors működés.
+  * Biztonságos működés: jelszavak tárolása, funkciókhoz való hozzáférés.
   
 ## Backend doksi
 ### Authorizáció
