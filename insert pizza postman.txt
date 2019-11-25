@@ -1,0 +1,35 @@
+auth: basic auth
+user : Dani2
+pw : password
+
+content: application/json
+
+body : 
+{
+	"nev" : "Sonkas",
+	"ar" : 350,
+	"alap" : {
+		"id" : 1,
+		"nev" : "Paradicsomos",
+		"ar" : 300
+	},
+	"teszta" : {
+		"id" : 1,
+		"nev" : "Vastag",
+		"ar" : 350
+	},
+	"feltetek" : 
+	[
+		{
+			"id" : 1,
+			"nev" : "Sajt",
+			"ar" : 100
+		},
+		{
+			"id" : 2,
+			"nev" : "Sonka",
+			"ar" : 150
+		}
+	]
+	
+}
