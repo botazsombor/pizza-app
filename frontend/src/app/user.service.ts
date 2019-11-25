@@ -5,7 +5,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 const httpOptions = {
   headers: new HttpHeaders({ 
     'Content-Type': 'application/json',
-    'Authorization': 'Basic dXNlcjpwYXNzd29yZA==', // user/password
+    'Access-Control-Allow-Origin':'*',
+    //'Authorization': 'Basic dXNlcjpwYXNzd29yZA==', // user/password
   })
 };
 

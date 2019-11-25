@@ -10,18 +10,18 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatToolbarModule, MatButtonToggleModule, MatIconModule, MatButtonModule, MatMenuModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { IssueListComponent } from './issue-list/issue-list.component';
-import { IssueFormComponent } from './issue-form/issue-form.component';
-import { IssueDetailComponent } from './issue-detail/issue-detail.component'; 
+import { UserListComponent } from './user-list/user-list.component';
+import { UserFormComponent } from './user-form/user-form.component';
+import { UserDetailComponent } from './user-detail/user-detail.component'; 
 import { StatusFilterComponent } from './status-filter/status-filter.component';
 import { RoutingModule } from './routing/routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    IssueListComponent,
-    IssueFormComponent,
-    IssueDetailComponent,
+    UserListComponent,
+    UserFormComponent,
+    UserDetailComponent,
     StatusFilterComponent
   ],
   imports: [
