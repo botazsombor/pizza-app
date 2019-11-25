@@ -31,7 +31,6 @@ public class User extends BaseEntity implements Serializable {
     private boolean enabled;
 
     @Column(nullable = false)
-    @Enumerated(EnumType.STRING)
     private Role role;
 
     @ManyToMany(targetEntity = Pizza.class)
