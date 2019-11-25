@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col">
+      <h1 class="display-2">Pizzas</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nev</th>
+            <th scope="col">Feltetek</th>
+            <th scope="col">Ar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pizza of filteredPizza" (click)="onSelectPizza(pizza)" [class.table-info]="pizza === selectedPizza" >
+            <th scope="row">{{ pizza.id }}</th>
+            <td>{{ pizza.nev }}</td>
+            <td>{{ pizza.feltetek }}</td>
+            <td>{{ pizza.ar }}</td>
+            <td>
+              <button mat-raised-button color="primary" (click)="onDeleteClick(user.id)">Add to Carts</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <status-filter [status]="selectedStatus" (onChange)="onFilterChange($event)"></status-filter>
+
