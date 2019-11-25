@@ -1,20 +1,20 @@
 <mat-toolbar color="primary">
-  <button mat-button href="/">
+  <button mat-button routerLink="/">
     <mat-icon>home</mat-icon>
     Pizza Order
   </button>
 
   <span class="fill-remaining-space" fxHide="false" fxHide.gt-sm></span>
   <div fxLayout="row" fxShow="false" fxShow.gt-sm>
-    <button mat-button routerLink="/users">My users</button>
-    <button mat-button routerLink="/users/add">New users</button>
+    <button mat-button routerLink="/cart"><mat-icon>shopping_cart</mat-icon>Cart</button>
+    <button mat-button routerLink="/profile"><mat-icon>person</mat-icon>My Account</button>
   </div>
   <button mat-icon-button [matMenuTriggerFor]="menu" fxHide="false" fxHide.gt-sm>
     <mat-icon>menu</mat-icon>
   </button>
 </mat-toolbar>
 <mat-menu xPosition="before" #menu="matMenu">
-  <button mat-menu-item routerLink="/pizzas">Pizzas</button>
+  <button mat-menu-item routerLink="/cart">Cart</button>
   <button mat-menu-item routerLink="/profile">My Account</button>
 </mat-menu>
 
