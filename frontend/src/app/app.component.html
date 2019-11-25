@@ -1,7 +1,7 @@
 <mat-toolbar color="primary">
   <button mat-button href="/">
     <mat-icon>home</mat-icon>
-    User tracker
+    Pizza Order
   </button>
 
   <span class="fill-remaining-space" fxHide="false" fxHide.gt-sm></span>
@@ -14,8 +14,8 @@
   </button>
 </mat-toolbar>
 <mat-menu xPosition="before" #menu="matMenu">
-  <button mat-menu-item routerLink="/users">My users</button>
-  <button mat-menu-item routerLink="/users/add">New users</button>
+  <button mat-menu-item routerLink="/pizzas">Pizzas</button>
+  <button mat-menu-item routerLink="/profile">My Account</button>
 </mat-menu>
 
 <router-outlet></router-outlet>

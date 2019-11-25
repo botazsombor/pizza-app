@@ -15,6 +15,7 @@ import { UserFormComponent } from './user-form/user-form.component';
 import { UserDetailComponent } from './user-detail/user-detail.component'; 
 import { StatusFilterComponent } from './status-filter/status-filter.component';
 import { RoutingModule } from './routing/routing.module';
+import { PizzaListComponent } from './pizza-list/pizza-list.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { RoutingModule } from './routing/routing.module';
     UserListComponent,
     UserFormComponent,
     UserDetailComponent,
-    StatusFilterComponent
+    StatusFilterComponent,
+    PizzaListComponent
   ],
   imports: [
     NgbModule,
