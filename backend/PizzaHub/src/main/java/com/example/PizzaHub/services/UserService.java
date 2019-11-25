@@ -4,6 +4,7 @@ import com.example.PizzaHub.entities.Pizza;
 import com.example.PizzaHub.entities.Role;
 import com.example.PizzaHub.entities.User;
 import com.example.PizzaHub.repositories.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -11,6 +12,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
+
 import java.util.Map;
 import java.util.Optional;
 
@@ -24,6 +27,12 @@ public class UserService extends BaseService<User,UserRepository> implements Use
 //        }
 //        return ResponseEntity.notFound().build();
 //    }
+
+    @Autowired
+    UserRepository userRepository;
+
+    @Autowired
+    private BCryptPasswordEncoder passwordEncoder;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -57,5 +66,16 @@ public class UserService extends BaseService<User,UserRepository> implements Use
 //        }
 //        return ResponseEntity.status(HttpStatus.IM_USED).build();
 //    }
+
+    public ResponseEntity<User> register(@RequestBody User user) {
+        Optional<User> oUser = userRepository.findByUserName(user.getUserName());
+        if (oUser.isPresent()) {
+            return ResponseEntity.badRequest().build();
+        }
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setEnabled(true);
+        user.setRole(Role.ROLE_USER);
+        return ResponseEntity.ok(userRepository.save(user));
+    }
 
 }

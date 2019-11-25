@@ -27,8 +27,11 @@ public class User extends BaseEntity implements Serializable {
     @Column
     private String emailAddress;
 
-    @NotNull
-    @Column
+    @Column(nullable = false)
+    private boolean enabled;
+
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     private Role role;
 
     @ManyToMany(targetEntity = Pizza.class)
