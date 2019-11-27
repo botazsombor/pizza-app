@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Pizza} from '../pizza';
 import {PizzaService} from '../pizza.service';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-pizza-list',
@@ -9,7 +10,7 @@ import {PizzaService} from '../pizza.service';
 })
 export class PizzaListComponent implements OnInit {
   private pizzas: Pizza[] = [];
-  constructor(private pizzaService: PizzaService) { }
+  constructor(private pizzaService: PizzaService, private cartService: CartService) { }
 
   public filteredPizza: Pizza[];
   public selectedTopping: string;
@@ -30,8 +31,8 @@ export class PizzaListComponent implements OnInit {
     this.selectedPizza = pizza;
   }
   
-  onAddClick(id: number) {
-    //add to cart
+  onAddClick(p: Pizza) {
+    this.cartService.addPizza(p);
   }
 
   private filter(): void {

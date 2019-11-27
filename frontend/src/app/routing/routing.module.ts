@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UserFormComponent } from '../user-form/user-form.component';
 import { UserDetailComponent } from '../user-detail/user-detail.component';
 import { PizzaListComponent } from '../pizza-list/pizza-list.component';
 import { ProfileComponent } from '../profile/profile.component';

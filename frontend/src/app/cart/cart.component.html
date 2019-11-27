@@ -1,1 +1,31 @@
-<p>cart works!</p>
+<div class="row">
+    <div class="col">
+      <h1 class="display-2">Rendeles</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nev</th>
+            <th scope="col">Db</th>
+            <th scope="col">Ar</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody> 
+          <tr *ngFor="let order of orders">
+            <th scope="row">{{ order.pizza.id }}</th>
+            <td>{{ order.pizza.nev }}</td>
+            <td>{{ order.db }}</td>
+            <td>{{ order.pizza.ar* order.db }} Ft</td>
+            <td>
+              <button mat-raised-button color="primary" (click)="increase(order.pizza)">+</button>
+            </td>
+            <td>
+                <button mat-raised-button color="primary" (click)="decrease(order.pizza)">-</button>
+              </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>

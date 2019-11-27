@@ -1,27 +1,29 @@
 <div class="row">
-    <div class="col">
-      <h1 class="display-2">Pizzas</h1>
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nev</th>
-            <th scope="col">Feltetek</th>
-            <th scope="col">Ar</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let pizza of filteredPizza" (click)="onSelectPizza(pizza)" [class.table-info]="pizza === selectedPizza" >
-            <th scope="row">{{ pizza.id }}</th>
-            <td>{{ pizza.nev }}</td>
-            <td>{{ pizza.feltetek }}</td>
-            <td>{{ pizza.ar }}</td>
-            <td>
-              <button mat-raised-button color="primary" (click)="onDeleteClick(user.id)">Add to Carts</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <div class="col">
+    <h1 class="display-2">Pizzak</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nev</th>
+          <th scope="col">Alap</th>
+          <th scope="col">Feltet</th>
+          <th scope="col">Ar</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pizza of filteredPizza" (click)="onSelectPizza(pizza)" [class.table-info]="pizza === selectedPizza" >
+          <th scope="row">{{ pizza.id }}</th>
+          <td>{{ pizza.nev }}</td>
+          <td>{{ pizza.alap.nev }}</td>
+          <td><i *ngFor="let feltet of pizza.feltetek">{{ feltet.nev }} </i></td>
+          <td>{{ pizza.ar }} Ft</td>
+          <td>
+            <button mat-raised-button color="primary" (click)="onAddClick(pizza)">Kosarba</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-
+</div>
