@@ -33,3 +33,77 @@ body :
 	]
 	
 }
+
+a usered megvan meg a pizzad is ha lekerted ugye, ugyanazt kell beadni idvel, lehet tobbet is
+aztan meg a rendeleshez: ezt kell kuldeni vegpont /rendelesek method post
+
+{
+	"user" : {
+        "id": 1,
+        "userName": "Dani1",
+        "password": "$2a$04$YDiv9c./ytEGZQopFfExoOgGlJL6/o0er0K.hiGb5TGKHUL8Ebn..",
+        "emailAddress": "f3ral.riser@gmail.com",
+        "enabled": true,
+        "role": "ROLE_USER"
+    },
+
+	"pizzak" : [
+		{
+			"id" : 1,
+			"nev" : "Sonkas",
+			"ar" : 350,
+			"alap" : {
+				"id" : 1,
+				"nev" : "Paradicsomos",
+				"ar" : 300
+			},
+			"teszta" : {
+				"id" : 1,
+				"nev" : "Vastag",
+				"ar" : 350
+			},
+			"feltetek" : 
+			[
+				{
+					"id" : 1,
+					"nev" : "Sajt",
+					"ar" : 100
+				},
+				{
+					"id" : 2,
+					"nev" : "Sonka",
+					"ar" : 150
+				}
+			]
+		}, 
+		{
+			"id" : 1,
+			"nev" : "Sonkas",
+			"ar" : 350,
+			"alap" : {
+				"id" : 1,
+				"nev" : "Paradicsomos",
+				"ar" : 300
+			},
+			"teszta" : {
+				"id" : 1,
+				"nev" : "Vastag",
+				"ar" : 350
+			},
+			"feltetek" : 
+			[
+				{
+					"id" : 1,
+					"nev" : "Sajt",
+					"ar" : 100
+				},
+				{
+					"id" : 2,
+					"nev" : "Sonka",
+					"ar" : 150
+				}
+			]
+		}
+	]
+	
+}

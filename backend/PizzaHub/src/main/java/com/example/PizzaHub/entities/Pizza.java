@@ -28,9 +28,7 @@ public class Pizza extends BaseHozzatevo implements Serializable {
     @JoinTable(joinColumns = @JoinColumn(name = "pizza_id"), inverseJoinColumns = @JoinColumn(name = "feltet_id"))
     private List<Feltet> feltetek = new ArrayList<>();
 
-    @ManyToMany(targetEntity = User.class, mappedBy = "pizzak")
-    private List<User> users = new ArrayList<>();
-
-
-
+    @JsonIgnore
+    @ManyToMany(targetEntity = Rendeles.class, mappedBy = "pizzak")
+    private List<Rendeles> rendelesek = new ArrayList<>();
 }

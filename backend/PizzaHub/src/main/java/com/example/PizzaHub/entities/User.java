@@ -33,8 +33,8 @@ public class User extends BaseEntity implements Serializable {
     @Column(nullable = false)
     private Role role;
 
-    @ManyToMany(targetEntity = Pizza.class)
-    @JoinTable(joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "pizza_id"))
-    private List<Pizza> pizzak = new ArrayList<>();
+    @OneToMany(targetEntity = Rendeles.class, mappedBy = "user")
+    @JsonIgnore
+    private List<Rendeles> rendelesek = new ArrayList<>();
 
 }
