@@ -24,11 +24,11 @@ export class PizzaService {
   getPizzas(): Promise<Pizza[]> {
     return this.http.get<Pizza[]>(`${this.pizzaUrl}`, httpOptions).toPromise();
   }
-  /*
+  
   getPizza(id: number): Promise<Pizza> {
     return this.http.get<Pizza>(`${this.pizzaUrl}/${id}`, httpOptions).toPromise();
   }
-
+  /*
   createPizza(pizza: Pizza): Promise<Pizza> {
     return this.http.post<Pizza>(`${this.pizzaUrl}`, Pizza, httpOptions).toPromise();
   }
