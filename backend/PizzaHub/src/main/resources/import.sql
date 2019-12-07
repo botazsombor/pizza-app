@@ -15,3 +15,28 @@ INSERT INTO alapok (nev,ar) VALUES ('Mustaros', '350');
 
 INSERT INTO tesztak (nev, ar) VALUES ('Vastag', '350');
 INSERT INTO tesztak (nev, ar) VALUES ('Vekony', '300');
+
+INSERT INTO pizzak (id, ar, nev, alap_id, teszta_id) VALUES (1, 1100, 'Sajtos', 1, 1);
+INSERT INTO pizzak_feltetek (pizza_id, feltet_id) VALUES (1,1);
+
+INSERT INTO pizzak (id, ar, nev, alap_id, teszta_id) VALUES (2, 1300, 'Sonkas', 1, 2);
+INSERT INTO pizzak_feltetek (pizza_id, feltet_id) VALUES (2,1);
+INSERT INTO pizzak_feltetek (pizza_id, feltet_id) VALUES (2,2);
+
+INSERT INTO pizzak (id, ar, nev, alap_id, teszta_id) VALUES (3, 1300, 'Szalamis', 1, 2);
+INSERT INTO pizzak_feltetek (pizza_id, feltet_id) VALUES (3,1);
+INSERT INTO pizzak_feltetek (pizza_id, feltet_id) VALUES (3,3);
+
+INSERT INTO pizzak (id, ar, nev, alap_id, teszta_id) VALUES (4, 1500, 'Magyaros', 2, 2);
+INSERT INTO pizzak_feltetek (pizza_id, feltet_id) VALUES (4,1);
+INSERT INTO pizzak_feltetek (pizza_id, feltet_id) VALUES (4,3);
+INSERT INTO pizzak_feltetek (pizza_id, feltet_id) VALUES (4,4);
+INSERT INTO pizzak_feltetek (pizza_id, feltet_id) VALUES (4,5);
+INSERT INTO pizzak_feltetek (pizza_id, feltet_id) VALUES (4,6);
+INSERT INTO pizzak_feltetek (pizza_id, feltet_id) VALUES (4,7);
+
+INSERT INTO pizzak (id, ar, nev, alap_id, teszta_id) VALUES (5, 1500, 'Zsombi kedvence', 3, 1);
+INSERT INTO pizzak_feltetek (pizza_id, feltet_id) VALUES (5,1);
+INSERT INTO pizzak_feltetek (pizza_id, feltet_id) VALUES (5,3);
+INSERT INTO pizzak_feltetek (pizza_id, feltet_id) VALUES (5,4);
+INSERT INTO pizzak_feltetek (pizza_id, feltet_id) VALUES (5,6);
