@@ -6,7 +6,7 @@ const httpOptions = {
   headers: new HttpHeaders({ 
     'Content-Type': 'application/json',
     'Access-Control-Allow-Origin':'*',
-    //'Authorization': 'Basic dXNlcjpwYXNzd29yZA==', // user/password
+    'Authorization': '', // user/password
   })
 };
 
@@ -39,5 +39,12 @@ export class UserService {
 
   deleteUser(id): Promise<User> {
     return this.http.delete<User>(`${this.userUrl}/${id}`, httpOptions).toPromise();
+  }
+  loginUser(key: String){
+    httpOptions.headers = httpOptions.headers.set('Authorization', 'Basic ' + key);
+    this.http.get<User[]>(`${this.userUrl}`, httpOptions).toPromise().then((res)=>console.log(res));
+  }
+  logoutUser(){
+    httpOptions.headers = httpOptions.headers.set('Authorization', '');
   }
 }
