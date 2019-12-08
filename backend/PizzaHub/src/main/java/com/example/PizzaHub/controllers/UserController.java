@@ -26,13 +26,13 @@ public class UserController extends BaseController<User,UserService> {
     @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<?> postUser(@RequestBody User user) { return rService.postUser(user); }
 
-    @PostMapping("register")
+    @RequestMapping(path = "/register",method = RequestMethod.POST)
     public ResponseEntity<User> register(@RequestBody User user) {
         return userService.register(user);
     }
 
-    @PostMapping("login")
-    public ResponseEntity login(@RequestBody User user) {
-        return ResponseEntity.ok().build();
+    @RequestMapping(path = "/login",method = RequestMethod.POST)
+    public ResponseEntity<User> login(@RequestBody User user) {
+        return rService.login(user);
     }
 }

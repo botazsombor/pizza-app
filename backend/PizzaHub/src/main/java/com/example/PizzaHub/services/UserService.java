@@ -78,4 +78,12 @@ public class UserService extends BaseService<User,UserRepository> implements Use
         return ResponseEntity.ok(userRepository.save(user));
     }
 
+    public ResponseEntity<User> login(@RequestBody User user) {
+        Optional<User> oUser = userRepository.findByUserName(user.getUserName());
+        if (oUser.isPresent()) {
+            return ResponseEntity.ok(oUser.get());
+        }
+        return ResponseEntity.notFound().build();
+    }
+
 }
