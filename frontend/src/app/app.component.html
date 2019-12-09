@@ -6,8 +6,9 @@
 
   <span class="fill-remaining-space" fxHide="false" fxHide.gt-sm></span>
   <div fxLayout="row" fxShow="false" fxShow.gt-sm>
-    <button mat-button routerLink="/cart"><mat-icon>shopping_cart</mat-icon>Cart</button>
+    <button mat-button routerLink="/cart"><span>{{this.cartService.getPizzaCount()}}</span><mat-icon>shopping_cart</mat-icon>Cart</button>
     <button mat-button routerLink="/profile"><mat-icon>person</mat-icon>My Account</button>
+    <button mat-button routerLink="/login"><mat-icon>person</mat-icon>Login</button>
   </div>
   <button mat-icon-button [matMenuTriggerFor]="menu" fxHide="false" fxHide.gt-sm>
     <mat-icon>menu</mat-icon>

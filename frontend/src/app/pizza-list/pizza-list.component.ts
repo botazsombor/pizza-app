@@ -14,7 +14,6 @@ export class PizzaListComponent implements OnInit {
 
   public filteredPizza: Pizza[];
   public selectedTopping: string;
-  public selectedPizza: Pizza;
 
   async ngOnInit(): Promise<void> {
     this.selectedTopping = '';
@@ -25,10 +24,6 @@ export class PizzaListComponent implements OnInit {
   onFilterChange(topping: string): void {
     this.selectedTopping = topping;
     this.filter();
-  }
-
-  onSelectPizza(pizza: Pizza): void {
-    this.selectedPizza = pizza;
   }
   
   onAddClick(p: Pizza) {

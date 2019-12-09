@@ -1,1 +1,17 @@
-<p>profile works!</p>
+<div class="row">
+    <div class="col">
+      <h1 class="display-2">Profil</h1>
+      <table class="table" *ngIf="currentUser!==null">
+        <tbody>
+          <tr>
+            <td><input type="text" [(ngModel)]="currentUser.userName"></td>
+          </tr> 
+          <tr>
+                <td><input type="text" [(ngModel)]="currentUser.emailAddress"></td>
+            </tr>
+       
+              <button mat-raised-button color="primary">Módosít</button>
+        </tbody>
+      </table>
+    </div>
+  </div>

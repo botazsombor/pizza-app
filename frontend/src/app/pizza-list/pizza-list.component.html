@@ -13,7 +13,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let pizza of filteredPizza" (click)="onSelectPizza(pizza)" [class.table-info]="pizza === selectedPizza" >
+        <tr *ngFor="let pizza of filteredPizza">
           <th scope="row">{{ pizza.id }}</th>
           <td>{{ pizza.nev }}</td>
           <td>{{ pizza.alap.nev }}</td>

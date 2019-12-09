@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { OrderItem } from './orderItem';
 import {Pizza} from './pizza';
+import { isObject } from 'util';
 
 @Injectable({
   providedIn: 'root'
@@ -35,6 +36,14 @@ export class CartService {
 
   public getOrders(): OrderItem[] {
     return this.orders;
+  }
+
+  public getPizzaCount(): number{
+    let counter = 0;
+    for(let o of this.orders){
+      counter += o.db
+    }
+    return counter;
   }
 
 }

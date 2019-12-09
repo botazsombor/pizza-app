@@ -12,6 +12,7 @@ import { UserService } from '../user.service';
 export class LoginComponent implements OnInit {
   username: string;
   password: string;
+  email: string;
   submitted = false;
   returnUrl: string;
   constructor(private userService: UserService) {
@@ -26,10 +27,15 @@ export class LoginComponent implements OnInit {
 
   }
   login(){
+    const msgBody = {
+      userName: this.username,
+      emailAddress: this.email,
+      password: this.password
+    }
     const token = this.username + ':' + this.password;
     const key = btoa(token);
     console.log(key);
-    this.userService.loginUser(key);
+    this.userService.loginUser(key, msgBody);
 
   }
 }

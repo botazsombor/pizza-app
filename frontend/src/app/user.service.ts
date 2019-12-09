@@ -16,7 +16,7 @@ const httpOptions = {
 export class UserService {
   
   private userUrl: string = 'http://localhost:8080/users';
-
+  private currentUser: User = null;
   constructor(
     private http: HttpClient
   ) { }
@@ -40,11 +40,27 @@ export class UserService {
   deleteUser(id): Promise<User> {
     return this.http.delete<User>(`${this.userUrl}/${id}`, httpOptions).toPromise();
   }
-  loginUser(key: String){
+  loginUser(key: String, msgBody: Object){
     httpOptions.headers = httpOptions.headers.set('Authorization', 'Basic ' + key);
-    this.http.get<User[]>(`${this.userUrl}`, httpOptions).toPromise().then((res)=>console.log(res));
+    
+    this.http.get<User[]>(`${this.userUrl}`, httpOptions).toPromise().then(
+      (res)=>{
+        this.currentUser = res[0];
+      });
   }
   logoutUser(){
     httpOptions.headers = httpOptions.headers.set('Authorization', '');
+    this.currentUser = null;
   }
+  getCurrentUser(){
+    return this.currentUser;
+  }
+  register(msgBody: Object){
+    
+    this.http.post<User[]>(`${this.userUrl}`,msgBody, httpOptions).toPromise().then(
+      (res)=>{
+        console.log(res);
+      });
+  }
+
 }
